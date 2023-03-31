@@ -20,9 +20,9 @@ interface printTeacher {
 interface StudentClassConstructor {
     new(firstName: string, lastName: string): StudentClassInterface;
 }
-interface StudentClassInterface {
-    firstName: string;
-    lastName: string;
+export interface StudentClassInterface {
+    displayName(): string;
+    workOnHomework(): string;
 }
 class StudentClass implements StudentClassInterface {
     firstName: string;
