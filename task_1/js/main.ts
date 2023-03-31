@@ -16,3 +16,25 @@ export const printTeacher: printTeacher = (firstName: string, lastName: string):
 interface printTeacher {
     (firstName: string, lastName: string): string
 }
+
+interface StudentClassConstructor {
+    new(firstName: string, lastName: string): StudentClassInterface;
+}
+interface StudentClassInterface {
+    firstName: string;
+    lastName: string;
+}
+class StudentClass implements StudentClassInterface {
+    firstName: string;
+    lastName: string;
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    workOnHomework() {
+        return 'Currently working';
+    }
+    displayName() {
+        return this.firstName;
+    }
+}
